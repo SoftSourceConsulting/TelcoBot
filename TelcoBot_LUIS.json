@@ -1,0 +1,579 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "TelcoBot",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Billing"
+    },
+    {
+      "name": "GoBack"
+    },
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "MainMenu"
+    },
+    {
+      "name": "NewUser"
+    },
+    {
+      "name": "No"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "OtherUser"
+    },
+    {
+      "name": "Pay"
+    },
+    {
+      "name": "Reset"
+    },
+    {
+      "name": "ServiceInquiry"
+    },
+    {
+      "name": "UpgradeService"
+    },
+    {
+      "name": "ViewInvoice"
+    },
+    {
+      "name": "Yes"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Month"
+    },
+    {
+      "name": "Name"
+    },
+    {
+      "name": "PaymentMethod"
+    },
+    {
+      "name": "Something"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [
+    {
+      "name": "bill",
+      "mode": true,
+      "words": "bill,invoice",
+      "activated": true
+    },
+    {
+      "name": "Greetings",
+      "mode": true,
+      "words": "Hi,Hello,what ' s up,what up,yo,hey",
+      "activated": true
+    },
+    {
+      "name": "pay",
+      "mode": true,
+      "words": "pay my,pay",
+      "activated": true
+    },
+    {
+      "name": "with",
+      "mode": true,
+      "words": "with my,with",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "do you have a pool?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are there rooms available on 12/21/2016?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i would like to reserve a room",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what does my billing look like?",
+      "intent": "Billing",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello?",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "yo",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "y",
+      "intent": "Yes",
+      "entities": []
+    },
+    {
+      "text": "yeah",
+      "intent": "Yes",
+      "entities": []
+    },
+    {
+      "text": "yep",
+      "intent": "Yes",
+      "entities": []
+    },
+    {
+      "text": "yes",
+      "intent": "Yes",
+      "entities": []
+    },
+    {
+      "text": "uh-huh",
+      "intent": "Yes",
+      "entities": []
+    },
+    {
+      "text": "yes, that's it",
+      "intent": "Yes",
+      "entities": []
+    },
+    {
+      "text": "yes something",
+      "intent": "Yes",
+      "entities": [
+        {
+          "entity": "Something",
+          "startPos": 4,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "yes, something",
+      "intent": "Yes",
+      "entities": [
+        {
+          "entity": "Something",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "well, yes",
+      "intent": "Yes",
+      "entities": []
+    },
+    {
+      "text": "n",
+      "intent": "No",
+      "entities": []
+    },
+    {
+      "text": "nope",
+      "intent": "No",
+      "entities": []
+    },
+    {
+      "text": "no",
+      "intent": "No",
+      "entities": []
+    },
+    {
+      "text": "negatori",
+      "intent": "No",
+      "entities": []
+    },
+    {
+      "text": "nuh-uh",
+      "intent": "No",
+      "entities": []
+    },
+    {
+      "text": "no, it's different",
+      "intent": "No",
+      "entities": []
+    },
+    {
+      "text": "definitely not",
+      "intent": "No",
+      "entities": []
+    },
+    {
+      "text": "i'm new",
+      "intent": "NewUser",
+      "entities": []
+    },
+    {
+      "text": "i'm a new user",
+      "intent": "NewUser",
+      "entities": []
+    },
+    {
+      "text": "new user",
+      "intent": "NewUser",
+      "entities": []
+    },
+    {
+      "text": "new",
+      "intent": "NewUser",
+      "entities": []
+    },
+    {
+      "text": "new guy",
+      "intent": "NewUser",
+      "entities": []
+    },
+    {
+      "text": "that's not me",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "not me",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "another",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "other",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "another user",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "other user",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "i'm not name",
+      "intent": "OtherUser",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 8,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "different user",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "another guy",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "i'm not neil mckamey-gonzalez",
+      "intent": "OtherUser",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 8,
+          "endPos": 11
+        },
+        {
+          "entity": "Name",
+          "startPos": 13,
+          "endPos": 19
+        },
+        {
+          "entity": "Name",
+          "startPos": 21,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "different guy",
+      "intent": "OtherUser",
+      "entities": []
+    },
+    {
+      "text": "i'm not fred brown.",
+      "intent": "OtherUser",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 8,
+          "endPos": 11
+        },
+        {
+          "entity": "Name",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "account",
+      "intent": "Billing",
+      "entities": []
+    },
+    {
+      "text": "history",
+      "intent": "Billing",
+      "entities": []
+    },
+    {
+      "text": "billing",
+      "intent": "Billing",
+      "entities": []
+    },
+    {
+      "text": "how much is my bill",
+      "intent": "Billing",
+      "entities": []
+    },
+    {
+      "text": "check my bill",
+      "intent": "Billing",
+      "entities": [
+        {
+          "entity": "Month",
+          "startPos": 6,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "service",
+      "intent": "ServiceInquiry",
+      "entities": []
+    },
+    {
+      "text": "check my service",
+      "intent": "ServiceInquiry",
+      "entities": []
+    },
+    {
+      "text": "service inquiry",
+      "intent": "ServiceInquiry",
+      "entities": []
+    },
+    {
+      "text": "check service",
+      "intent": "ServiceInquiry",
+      "entities": []
+    },
+    {
+      "text": "i’d like to check my service",
+      "intent": "ServiceInquiry",
+      "entities": []
+    },
+    {
+      "text": "upgrade",
+      "intent": "UpgradeService",
+      "entities": []
+    },
+    {
+      "text": "upgrades",
+      "intent": "UpgradeService",
+      "entities": []
+    },
+    {
+      "text": "upgrade service",
+      "intent": "UpgradeService",
+      "entities": []
+    },
+    {
+      "text": "checking on upgrades",
+      "intent": "UpgradeService",
+      "entities": []
+    },
+    {
+      "text": "upgrade my service please",
+      "intent": "UpgradeService",
+      "entities": []
+    },
+    {
+      "text": "i’m interested in an upgrade",
+      "intent": "UpgradeService",
+      "entities": []
+    },
+    {
+      "text": "view invoice",
+      "intent": "ViewInvoice",
+      "entities": []
+    },
+    {
+      "text": "view details",
+      "intent": "ViewInvoice",
+      "entities": []
+    },
+    {
+      "text": "view full invoice",
+      "intent": "ViewInvoice",
+      "entities": []
+    },
+    {
+      "text": "back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "nevermind",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "main",
+      "intent": "MainMenu",
+      "entities": []
+    },
+    {
+      "text": "menu",
+      "intent": "MainMenu",
+      "entities": []
+    },
+    {
+      "text": "main menu",
+      "intent": "MainMenu",
+      "entities": []
+    },
+    {
+      "text": "start again",
+      "intent": "Reset",
+      "entities": []
+    },
+    {
+      "text": "start over",
+      "intent": "Reset",
+      "entities": []
+    },
+    {
+      "text": "reset",
+      "intent": "Reset",
+      "entities": []
+    },
+    {
+      "text": "restart",
+      "intent": "Reset",
+      "entities": []
+    },
+    {
+      "text": "/restart",
+      "intent": "Reset",
+      "entities": []
+    },
+    {
+      "text": "pay march with mastercard",
+      "intent": "Pay",
+      "entities": [
+        {
+          "entity": "PaymentMethod",
+          "startPos": 15,
+          "endPos": 24
+        },
+        {
+          "entity": "Month",
+          "startPos": 4,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "pay march",
+      "intent": "Pay",
+      "entities": [
+        {
+          "entity": "Month",
+          "startPos": 4,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "pay this bill",
+      "intent": "Pay",
+      "entities": [
+        {
+          "entity": "Month",
+          "startPos": 4,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "pay this bill with card",
+      "intent": "Pay",
+      "entities": [
+        {
+          "entity": "PaymentMethod",
+          "startPos": 19,
+          "endPos": 22
+        },
+        {
+          "entity": "Month",
+          "startPos": 4,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "pay month bill with my method",
+      "intent": "Pay",
+      "entities": [
+        {
+          "entity": "PaymentMethod",
+          "startPos": 23,
+          "endPos": 28
+        },
+        {
+          "entity": "Month",
+          "startPos": 4,
+          "endPos": 8
+        }
+      ]
+    }
+  ]
+}

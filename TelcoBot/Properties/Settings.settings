@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TelcoBot.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LuisModelId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">69622d8e-5c7c-4ff2-ac18-28d45c18e71e</Value>
+    </Setting>
+    <Setting Name="LuisSubscriptionKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c2fd8f190f3340209d9722e1d549ed18</Value>
+    </Setting>
+    <Setting Name="VendorLogoImageFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">contoso-logo2.png</Value>
+    </Setting>
+    <Setting Name="VendorName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Contoso</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
