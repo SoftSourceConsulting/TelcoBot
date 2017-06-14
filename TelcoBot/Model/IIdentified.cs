@@ -1,7 +1,7 @@
 ﻿/*  
  *  IIdentified.cs
- *  Neil McKamey-Gonzalez
- *  Softsource Consulting, Inc.
+ *
+ *  SoftSource Consulting, Inc.
  */
 
 namespace TelcoBot.Model

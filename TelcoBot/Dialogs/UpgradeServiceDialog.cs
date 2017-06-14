@@ -1,7 +1,7 @@
 ﻿/*  
  *  UpgradeServiceDialog.cs
- *  Neil McKamey-Gonzalez
- *  Softsource Consulting, Inc.
+ *
+ *  SoftSource Consulting, Inc.
  */
 
 using System;
