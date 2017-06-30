@@ -64,10 +64,9 @@ namespace TelcoBot.Dialogs
         {
             // LUIS queries are handled here instead of with classes derived from LuisDialog because that would require hard-coding 
             //  the LUIS model ID and subscription key into the class definition, which are not appropriate for this implementation.
-
             string message = source.Text.SplitList(Environment.NewLine).FirstOrDefault();
             LuisService service = new LuisService(new LuisModelAttribute(Properties.Settings.Default.LuisModelId, Properties.Settings.Default.LuisSubscriptionKey));
-            LuisResult result = await service.QueryAsync(message);
+            LuisResult result = await service.QueryAsync(message, new System.Threading.CancellationToken());
 
             return result;
         }
