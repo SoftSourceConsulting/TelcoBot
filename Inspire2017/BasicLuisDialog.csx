@@ -10,7 +10,7 @@ using Microsoft.Bot.Builder.Luis.Models;
 public interface ICheckDataUsage
 {
     // IDialogContext provides all details surrounding current conversation.
-	// Return Task as method likely called in async context.
+    // Return Task as method likely called in async context.
     Task<decimal> GetMegabytesRemainingThisMonth(IDialogContext context);
 }
 
