@@ -12,7 +12,7 @@ namespace TelcoBot.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace TelcoBot.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("69622d8e-5c7c-4ff2-ac18-28d45c18e71e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LuisModelId {
             get {
                 return ((string)(this["LuisModelId"]));
@@ -34,7 +34,7 @@ namespace TelcoBot.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c2fd8f190f3340209d9722e1d549ed18")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LuisSubscriptionKey {
             get {
                 return ((string)(this["LuisSubscriptionKey"]));
