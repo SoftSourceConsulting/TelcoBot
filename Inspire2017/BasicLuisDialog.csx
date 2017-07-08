@@ -33,6 +33,8 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 
+using Newtonsoft.Json.Linq;
+
 // Abstract interface to a backoffice system.
 public interface ICheckDataUsage
 {
@@ -64,9 +66,9 @@ public class BasicLuisDialog : LuisDialog<object>
         usage = backoffice;
     }
 
-    // Anything not understood by LUIS goes here.
-    [LuisIntent("None")]
-    public async Task NoneIntent(IDialogContext context, LuisResult result)
+    // demo context #1: user asking to check their data usage this month
+    [LuisIntent("CheckData")]
+    public async Task CheckDataIntent(IDialogContext context, LuisResult result)
     {
         decimal mb = await usage.GetMegabytesRemainingThisMonth(context);
         
@@ -74,12 +76,44 @@ public class BasicLuisDialog : LuisDialog<object>
         context.Wait(MessageReceived);
     }
 
-    // Go to https://luis.ai and create a new intent, then train/publish your luis app.
-    // Finally replace "MyIntent" with the name of your newly created intent in the following handler
-    [LuisIntent("InternetOutage")]
-    public async Task InternetOutageIntent(IDialogContext context, LuisResult result)
+    // demo context #2: user's home internet connection is down
+    [LuisIntent("InternetDown")]
+    public async Task InternetDownIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"Sorry to hear that your Internet is out. Would you please answer a few questions so our service technicians can expedite a solution?"); //
+        await context.PostAsync($"Sorry to hear that your Internet is out. How long have you been unable to connect?");
+        context.Wait(MessageReceived);
+    }
+    
+    [LuisIntent("Duration")]
+    public async Task DurationIntent(IDialogContext context, LuisResult result)
+    {
+        if (result.Entities.Count > 0 && result.Entities[0].Type == "builtin.datetimeV2.duration")
+        {
+            string val = result.Entities[0].Resolution["values"].ToString();
+            var secondsDown = Convert.ToInt32(JArray.Parse(val).Last["value"]);
+            if (secondsDown >= 7200)
+            {
+                // more than two hours
+                await context.PostAsync($"Sorry your internet has been down for so long. I have marked your service request as urgent.");
+                context.Wait(MessageReceived);
+            }
+            else
+            {
+                await context.PostAsync($"Please wait a few more minutes while our technicians restore your service.");
+                context.Wait(MessageReceived);
+            }
+        }
+        else
+        {
+            await context.PostAsync($"Our technicians are currently working to fix your outage. Thank you for your patience.");
+            context.Wait(MessageReceived);
+        }
+    }
+
+    [LuisIntent("None")]
+    public async Task NoneIntent(IDialogContext context, LuisResult result)
+    {
+        await context.PostAsync($"Sorry, I don't understand. Can you rephrase?"); //
         context.Wait(MessageReceived);
     }
 }
