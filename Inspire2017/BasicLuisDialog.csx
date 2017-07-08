@@ -32,7 +32,6 @@ using Microsoft.Bot.Builder.Azure;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
-
 using Newtonsoft.Json.Linq;
 
 // Abstract interface to a backoffice system.
@@ -72,7 +71,7 @@ public class BasicLuisDialog : LuisDialog<object>
     {
         decimal mb = await usage.GetMegabytesRemainingThisMonth(context);
         
-        await context.PostAsync($"You have {mb} MB of data remaining this month."); //
+        await context.PostAsync($"You have {mb} MB of data remaining this month.");
         context.Wait(MessageReceived);
     }
 
@@ -84,11 +83,13 @@ public class BasicLuisDialog : LuisDialog<object>
         context.Wait(MessageReceived);
     }
     
+    // demo context #3: user is telling us how long their internet has been down
     [LuisIntent("Duration")]
     public async Task DurationIntent(IDialogContext context, LuisResult result)
     {
         if (result.Entities.Count > 0 && result.Entities[0].Type == "builtin.datetimeV2.duration")
         {
+            // extract duration value as seconds regardless of how the user typed it
             string val = result.Entities[0].Resolution["values"].ToString();
             var secondsDown = Convert.ToInt32(JArray.Parse(val).Last["value"]);
             if (secondsDown >= 7200)
@@ -113,7 +114,7 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("None")]
     public async Task NoneIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"Sorry, I don't understand. Can you rephrase?"); //
+        await context.PostAsync($"Sorry, I don't understand. Can you rephrase?");
         context.Wait(MessageReceived);
     }
 }
